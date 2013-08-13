@@ -1,0 +1,140 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="900" height="900"></canvas>
+      <script src="jquery-1.10.2.js"></script>
+    <script>
+      var canvas = document.getElementById('myCanvas');
+      var context = canvas.getContext('2d');
+        
+
+
+	  <!-- row 1 -->
+
+        
+        
+      context.beginPath();
+      context.rect(100, 100, 200, 200);
+      context.fillStyle = 'blue';
+      context.fill();
+      context.lineWidth = 7;
+      context.strokeStyle = 'black';
+      context.stroke();
+
+      context.beginPath();
+      context.rect(300, 100, 200, 200);
+      context.fillStyle = 'blue';
+      context.fill();
+      context.lineWidth = 7;
+      context.strokeStyle = 'black';
+      context.stroke();
+
+      context.beginPath();
+      context.rect(500, 100, 200, 200);
+      context.fillStyle = 'blue';
+      context.fill();
+      context.lineWidth = 7;
+      context.strokeStyle = 'black';
+      context.stroke();
+
+	  <!-- row 2 -->
+
+
+      context.beginPath();
+      context.rect(100, 300, 200, 200);
+      context.fillStyle = 'blue';
+      context.fill();
+      context.lineWidth = 7;
+      context.strokeStyle = 'black';
+      context.stroke();
+
+      context.beginPath();
+      context.rect(300, 300, 200, 200);
+      context.fillStyle = 'blue';
+      context.fill();
+      context.lineWidth = 7;
+      context.strokeStyle = 'black';
+      context.stroke();
+
+      context.beginPath();
+      context.rect(500, 300, 200, 200);
+      context.fillStyle = 'blue';
+      context.fill();
+      context.lineWidth = 7;
+      context.strokeStyle = 'black';
+      context.stroke();
+
+
+	  <!-- row 3 -->
+	
+      context.beginPath();
+      context.rect(100, 500, 200, 200);
+      context.fillStyle = 'blue';
+      context.fill();
+      context.lineWidth = 7;
+      context.strokeStyle = 'black';
+      context.stroke();
+
+      context.beginPath();
+      context.rect(300, 500, 200, 200);
+      context.fillStyle = 'blue';
+      context.fill();
+      context.lineWidth = 7;
+      context.strokeStyle = 'black';
+      context.stroke();
+
+      context.beginPath();
+      context.rect(500, 500, 200, 200);
+      context.fillStyle = 'blue';
+      context.fill();
+      context.lineWidth = 7;
+      context.strokeStyle = 'black';
+      context.stroke();
+
+        var canvas = $('#myCanvas');
+        
+        // calculate position of the canvas DOM element on the page
+        
+        var canvasPosition = {
+            x: canvas.offset().left,
+            y: canvas.offset().top
+        };
+        
+        canvas.on('click', function(e) {
+                  
+                  // use pageX and pageY to get the mouse position
+                  // relative to the browser window
+                  
+                  var mouse = {
+                  x: e.pageX - canvasPosition.x,
+                  y: e.pageY - canvasPosition.y
+                  }
+                  
+                  // now you have local coordinates,
+                  // which consider a (0,0) origin at the
+                  // top-left of canvas element
+                  var img = new Image();
+                  img.onload = function() {
+                  context.drawImage(img, mouse.x, mouse.y, 75, 75);
+                  }
+                  img.src = 'person.png';
+
+
+
+                  
+        });
+
+
+        
+        
+    </script>
+  </body>
+</html>
