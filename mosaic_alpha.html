@@ -118,12 +118,51 @@
                   y: e.pageY - canvasPosition.y
                   }
                   
+				  var x1 =0;
+				  var y1 =0;
+				  var personsize = 80;
+				  
+				  //row 1
+				  
+				  if (mouse.x > 100 && mouse.x < 300) {x1 = 200}
+				  if (mouse.y > 100 && mouse.y < 300) {y1 = 200}
+				  
+				  if (mouse.x > 300 && mouse.x < 500) {x1 = 400}
+				  if (mouse.y > 100 && mouse.y < 300) {y1 = 200}
+				  
+				  if (mouse.x > 500 && mouse.x < 700) {x1 = 600}
+				  if (mouse.y > 100 && mouse.y < 300) {y1 = 200}
+				
+				  //row 2
+				  
+				  if (mouse.x > 100 && mouse.x < 300) {x1 = 200}
+				  if (mouse.y > 300 && mouse.y < 500) {y1 = 400}
+				  
+				  if (mouse.x > 300 && mouse.x < 500) {x1 = 400}
+				  if (mouse.y > 300 && mouse.y < 500) {y1 = 400}
+				  
+				  if (mouse.x > 500 && mouse.x < 700) {x1 = 600}
+				  if (mouse.y > 300 && mouse.y < 500) {y1 = 400}
+				  
+				  // row 3
+				  
+				  if (mouse.x > 100 && mouse.x < 300) {x1 = 200}
+				  if (mouse.y > 500 && mouse.y < 700) {y1 = 600}
+				  
+				  if (mouse.x > 300 && mouse.x < 500) {x1 = 400}
+				  if (mouse.y > 500 && mouse.y < 700) {y1 = 600}
+				  
+				  if (mouse.x > 500 && mouse.x < 700) {x1 = 600}
+				  if (mouse.y > 500 && mouse.y < 700) {y1 = 600}
+				  
+				  
+				  
                   // now you have local coordinates,
                   // which consider a (0,0) origin at the
                   // top-left of canvas element
                   var img = new Image();
                   img.onload = function() {
-                  context.drawImage(img, mouse.x, mouse.y, 75, 75);
+                  context.drawImage(img, x1 - .5*personsize, y1 - .5*personsize, personsize, personsize);
                   }
                   img.src = 'person.png';
 
